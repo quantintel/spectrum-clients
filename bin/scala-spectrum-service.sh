@@ -23,7 +23,7 @@ cd $APP_DIR
 
 # if you've executed sbt assembly previously it will use that instead.
 export JAVA_OPTS="${JAVA_OPTS} -XX:MaxPermSize=256M -Xmx1024M -DloggerPath=conf/log4j.properties"
-ags="$@ stubs/client/scala/ScalaSpectrumServiceCodegen.scala http://localhost:9000/api-docs"
+ags="$@ src/main/scala/ScalaSpectrumServiceCodegen.scala http://localhost:9000/api-docs"
 
 if [ -f $APP_DIR/target/scala-$SCALA_RUNNER_VERSION/*assembly*.jar ]; then
   scala -cp target/scala-$SCALA_RUNNER_VERSION/*assembly*.jar $ags
