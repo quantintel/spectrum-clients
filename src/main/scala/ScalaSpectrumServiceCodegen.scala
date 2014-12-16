@@ -3,7 +3,7 @@ import com.wordnik.swagger.codegen.BasicScalaGenerator
 /**
  * @author Paul Bernard
  */
-class ScalaSpectrumServiceCodegen extends BasicScalaGenerator {
+object ScalaSpectrumServiceCodegen extends BasicScalaGenerator {
 
 
   def main(args: Array[String]) =  this.generateClient(args)
