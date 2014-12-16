@@ -5,7 +5,7 @@ object JavaSpectrumServiceCodegen extends BasicJavaGenerator {
   def main(args: Array[String]) = generateClient(args)
 
   // location of templates
-  override def templateDir = "src/main/resources/Java"
+  override def templateDir = "Java"
 
   // where to write generated code
   override def destinationDir = "src/main/java"
