@@ -30,6 +30,8 @@ scalaVersion := "2.11.4"
 resolvers ++=Seq("central" at "http://repo1.maven.org/maven2/",
   "Sonotype-public" at "https://oss.sonatype.org/content/repositories/public")
 
+resolvers += "FuseSource Public Repository" at
+  "http://repo.fusesource.com/nexus/content/repositories/public"
 
 libraryDependencies ++= Seq(
   "org.json4s"                  %% "json4s-jackson"     % "3.2.10",
@@ -42,7 +44,8 @@ libraryDependencies ++= Seq(
   "org.scalatest"               %% "scalatest"          % "2.1.7" % "test",
   "com.wordnik"                 % "swagger-codegen_2.11.1" % "2.0.17" % "provided",
   "com.wordnik"                 % "swagger-play2_2.11"  % "1.3.11" % "provided",
-  "com.wordnik"                 % "swagger-play2-utils_2.11" % "1.3.11"% "provided"
+  "com.wordnik"                 % "swagger-play2-utils_2.11" % "1.3.11"% "provided",
+  "org.scalatra.scalate"        %% "scalate-core"       % "1.7.0"
 )
 
 libraryDependencies ++= Seq( jdbc , anorm , cache , ws )

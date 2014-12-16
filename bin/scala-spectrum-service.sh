@@ -22,11 +22,7 @@ cd $APP_DIR
 
 
 # if you've executed sbt assembly previously it will use that instead.
-export JAVA_OPTS="${JAVA_OPTS} -XX:MaxPermSize=256M -Xmx1024M -DloggerPath=conf/log4j.properties"
-ags="$@ src/main/scala/ScalaSpectrumServiceCodegen.scala http://localhost:9000/api-docs"
+export JAVA_OPTS="${JAVA_OPTS} -Xmx1024M -DloggerPath=conf/log4j.properties"
+ags="$@ src/main/scala/ScalaSpectrumServiceCodegen.scala http://localhost:9000/api-docs special-key"
 
-if [ -f $APP_DIR/target/scala-$SCALA_RUNNER_VERSION/*assembly*.jar ]; then
-  scala -cp target/scala-$SCALA_RUNNER_VERSION/*assembly*.jar $ags
-else
-  echo "Please set scalaVersion := \"$SCALA_RUNNER_VERSION\" in build.sbt and run ./sbt assembly"
-fi
+scala -cp target/scala-2.11/*assembly*.jar $ags
