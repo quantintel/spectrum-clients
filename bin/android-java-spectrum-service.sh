@@ -23,7 +23,7 @@ SCALA_RUNNER_VERSION=$(scala ./bin/Version.scala)
 
 # if you've executed sbt assembly previously it will use that instead.
 export JAVA_OPTS="${JAVA_OPTS} -XX:MaxPermSize=256M -Xmx1024M -DloggerPath=conf/log4j.properties"
-ags="$@ stubs/client/spectrum-service/android-java/AndroidJavaPetstoreCodegen.scala http://petstore.swagger.wordnik.com/api/api-docs special-key"
+ags="$@ src/main/android-java/AndroidJavaSpectrumServiceCodegen.scala http://localhost:9000/api-docs special-key"
 
 if [ -f $APP_DIR/target/scala-$SCALA_RUNNER_VERSION/*assembly*.jar ]; then
   scala -cp $APP_DIR/target/scala-$SCALA_RUNNER_VERSION/*assembly*.jar $ags
