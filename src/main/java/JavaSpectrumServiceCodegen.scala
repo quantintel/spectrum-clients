@@ -11,13 +11,13 @@ object JavaSpectrumServiceCodegen extends BasicJavaGenerator {
   override def destinationDir = "src/main/java"
 
   // package for api invoker, error files
-  override def invokerPackage = Some("com.quantintel.financial.client")
+  override def invokerPackage = Some("com.quantintel.spectrum.client")
 
   // package for models
-  override def modelPackage = Some("com.quantintel.financial")
+  override def modelPackage = Some("com.quantintel.spectrum")
 
   // package for api classes
-  override def apiPackage = Some("com.quantintel.financial.api")
+  override def apiPackage = Some("com.quantintel.spectrum.api")
 
   additionalParams ++= Map(
     "artifactId" -> "spectrum-java-client",
