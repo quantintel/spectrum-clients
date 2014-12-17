@@ -5,10 +5,10 @@ object AndroidJavaSpectrumServiceCodegen extends BasicAndroidJavaGenerator {
   def main(args: Array[String]) = generateClient(args)
 
   // location of templates
-  override def templateDir = "src/main/resources/android-java"
+  override def templateDir = "android-java"
 
   // where to write generated code
-  override def destinationDir = "src/main/android-java/src/main/java"
+  override def destinationDir = "src/main/android-java"
 
   // package for api invoker, error files
   override def invokerPackage = Some("org.quantintel.spectrum.client")

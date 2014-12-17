@@ -8,7 +8,7 @@ object CsharpSpectrumServiceCodegen extends BasicCSharpGenerator {
   override def templateDir = "csharp"
 
   // where to write generated code
-  override def destinationDir = "src/main/csharp/src"
+  override def destinationDir = "src/main/csharp"
 
   // package for api invoker, error files
   override def invokerPackage = Some("Org.Quantintel.Spectrum")
