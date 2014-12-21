@@ -3,6 +3,8 @@ package org.quantintel.spectrum.api;
 import org.quantintel.spectrum.client.ApiException;
 import org.quantintel.spectrum.client.ApiInvoker;
 
+import org.quantintel.spectrum.SingleStringValue;
+import org.quantintel.spectrum.SingleLongValue;
 import com.sun.jersey.multipart.FormDataMultiPart;
 
 import javax.ws.rs.core.MediaType;
@@ -27,7 +29,7 @@ public class DateApi {
   }
 
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String dtMonth (Long serialNumber) throws ApiException {
+  public SingleStringValue dtMonth (Long serialNumber) throws ApiException {
     Object postBody = null;
     // verify required params are set
     if(serialNumber == null ) {
@@ -58,7 +60,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -73,7 +75,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String dtYear (Long serialNumber) throws ApiException {
+  public SingleStringValue dtYear (Long serialNumber) throws ApiException {
     Object postBody = null;
     // verify required params are set
     if(serialNumber == null ) {
@@ -104,7 +106,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -119,7 +121,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String isLeapYear () throws ApiException {
+  public SingleStringValue isLeapYear () throws ApiException {
     Object postBody = null;
     // create path and map variables
     String path = "/date/today/isLeapYear".replaceAll("\\{format\\}","json");
@@ -146,7 +148,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -161,7 +163,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String dtstrIsLeapYear  () throws ApiException {
+  public SingleStringValue dtstrIsLeapYear  () throws ApiException {
     Object postBody = null;
     // create path and map variables
     String path = "/date/{mm}/{dd}/{yyyy}/isLeapYear".replaceAll("\\{format\\}","json");
@@ -188,7 +190,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -203,7 +205,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String month () throws ApiException {
+  public SingleStringValue month () throws ApiException {
     Object postBody = null;
     // create path and map variables
     String path = "/date/today/month".replaceAll("\\{format\\}","json");
@@ -230,7 +232,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -245,7 +247,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String simpleFmt (Long serialNumber) throws ApiException {
+  public SingleStringValue simpleFmt (Long serialNumber) throws ApiException {
     Object postBody = null;
     // verify required params are set
     if(serialNumber == null ) {
@@ -276,7 +278,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -291,7 +293,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String dtstrMonth () throws ApiException {
+  public SingleStringValue dtstrMonth () throws ApiException {
     Object postBody = null;
     // create path and map variables
     String path = "/date/{mm}/{dd}/{yyyy}/month".replaceAll("\\{format\\}","json");
@@ -318,7 +320,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -333,7 +335,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String dtstrDayOfMonth () throws ApiException {
+  public SingleStringValue dtstrDayOfMonth () throws ApiException {
     Object postBody = null;
     // create path and map variables
     String path = "/date/{mm}/{dd}/{yyyy}/dayOfMonth".replaceAll("\\{format\\}","json");
@@ -360,7 +362,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -375,7 +377,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String dtIsLeapYear (Long serialNumber) throws ApiException {
+  public SingleStringValue dtIsLeapYear (Long serialNumber) throws ApiException {
     Object postBody = null;
     // verify required params are set
     if(serialNumber == null ) {
@@ -406,7 +408,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -421,7 +423,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String dayOfYear () throws ApiException {
+  public SingleStringValue dayOfYear () throws ApiException {
     Object postBody = null;
     // create path and map variables
     String path = "/date/today/dayOfYear".replaceAll("\\{format\\}","json");
@@ -448,7 +450,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -463,7 +465,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String todaySimpleFmt () throws ApiException {
+  public SingleStringValue todaySimpleFmt () throws ApiException {
     Object postBody = null;
     // create path and map variables
     String path = "/date/today/mmddyyyy".replaceAll("\\{format\\}","json");
@@ -490,7 +492,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -505,7 +507,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String dtstrDayOfYear  () throws ApiException {
+  public SingleStringValue dtstrDayOfYear  () throws ApiException {
     Object postBody = null;
     // create path and map variables
     String path = "/date/{mm}/{dd}/{yyyy}/dayOfYear".replaceAll("\\{format\\}","json");
@@ -532,7 +534,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -547,7 +549,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String weekday () throws ApiException {
+  public SingleStringValue weekday () throws ApiException {
     Object postBody = null;
     // create path and map variables
     String path = "/date/today/weekday".replaceAll("\\{format\\}","json");
@@ -574,7 +576,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -589,7 +591,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String dtstrWeekday () throws ApiException {
+  public SingleStringValue dtstrWeekday () throws ApiException {
     Object postBody = null;
     // create path and map variables
     String path = "/date/{mm}/{dd}/{yyyy}/weekday".replaceAll("\\{format\\}","json");
@@ -616,7 +618,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -631,7 +633,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String dtstrYear () throws ApiException {
+  public SingleStringValue dtstrYear () throws ApiException {
     Object postBody = null;
     // create path and map variables
     String path = "/date/{mm}/{dd}/{yyyy}/year".replaceAll("\\{format\\}","json");
@@ -658,7 +660,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -673,7 +675,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String dayOfMonth () throws ApiException {
+  public SingleStringValue dayOfMonth () throws ApiException {
     Object postBody = null;
     // create path and map variables
     String path = "/date/today/dayOfMonth".replaceAll("\\{format\\}","json");
@@ -700,7 +702,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -715,7 +717,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String year () throws ApiException {
+  public SingleStringValue year () throws ApiException {
     Object postBody = null;
     // create path and map variables
     String path = "/date/today/year".replaceAll("\\{format\\}","json");
@@ -742,7 +744,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -757,7 +759,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String dtDayOfYear  (Long serialNumber) throws ApiException {
+  public SingleStringValue dtDayOfYear  (Long serialNumber) throws ApiException {
     Object postBody = null;
     // verify required params are set
     if(serialNumber == null ) {
@@ -788,7 +790,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -803,7 +805,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String dtDayOfMonth (Long serialNumber) throws ApiException {
+  public SingleStringValue dtDayOfMonth (Long serialNumber) throws ApiException {
     Object postBody = null;
     // verify required params are set
     if(serialNumber == null ) {
@@ -834,7 +836,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
@@ -850,7 +852,7 @@ public class DateApi {
   }
   //error info- code: 400 reason: "Required parameter missing" model: <none>
   //error info- code: 404 reason: "todays serial number not found" model: <none>
-  public Long today () throws ApiException {
+  public SingleLongValue today () throws ApiException {
     Object postBody = null;
     // create path and map variables
     String path = "/date/today/serialNumber".replaceAll("\\{format\\}","json");
@@ -877,7 +879,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (Long) ApiInvoker.deserialize(response, "", Long.class);
+        return (SingleLongValue) ApiInvoker.deserialize(response, "", SingleLongValue.class);
       }
       else {
         return null;
@@ -892,7 +894,7 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public String dtWeekday (Long serialNumber) throws ApiException {
+  public SingleStringValue dtWeekday (Long serialNumber) throws ApiException {
     Object postBody = null;
     // verify required params are set
     if(serialNumber == null ) {
@@ -923,7 +925,7 @@ public class DateApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
+        return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
       }
       else {
         return null;
