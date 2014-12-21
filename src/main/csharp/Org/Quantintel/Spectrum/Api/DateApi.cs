@@ -31,7 +31,7 @@
       /// </summary>
       /// <param name="serialNumber">date serial number</param>
       /// <returns></returns>
-      public string dtMonth (long? serialNumber) {
+      public SingleStringValue dtMonth (long? serialNumber) {
         // create path and map variables
         var path = "/date/{serialNumber}/month".Replace("{format}","json").Replace("{" + "serialNumber" + "}", apiInvoker.escapeString(serialNumber.ToString()));
 
@@ -45,13 +45,13 @@
            throw new ApiException(400, "missing required params");
         }
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -71,7 +71,7 @@
       /// </summary>
       /// <param name="serialNumber">date serial number</param>
       /// <returns></returns>
-      public string dtYear (long? serialNumber) {
+      public SingleStringValue dtYear (long? serialNumber) {
         // create path and map variables
         var path = "/date/{serialNumber}/year".Replace("{format}","json").Replace("{" + "serialNumber" + "}", apiInvoker.escapeString(serialNumber.ToString()));
 
@@ -85,13 +85,13 @@
            throw new ApiException(400, "missing required params");
         }
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -110,7 +110,7 @@
       /// returns whether the current year is a leap year. 
       /// </summary>
       /// <returns></returns>
-      public string isLeapYear () {
+      public SingleStringValue isLeapYear () {
         // create path and map variables
         var path = "/date/today/isLeapYear".Replace("{format}","json");
 
@@ -120,13 +120,13 @@
         var formParams = new Dictionary<String, object>();
 
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -145,7 +145,7 @@
       /// returns whether the date provided is within a leap year. 
       /// </summary>
       /// <returns></returns>
-      public string dtstrIsLeapYear  () {
+      public SingleStringValue dtstrIsLeapYear  () {
         // create path and map variables
         var path = "/date/{mm}/{dd}/{yyyy}/isLeapYear".Replace("{format}","json");
 
@@ -155,13 +155,13 @@
         var formParams = new Dictionary<String, object>();
 
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -180,7 +180,7 @@
       /// month for the current date 
       /// </summary>
       /// <returns></returns>
-      public string month () {
+      public SingleStringValue month () {
         // create path and map variables
         var path = "/date/today/month".Replace("{format}","json");
 
@@ -190,13 +190,13 @@
         var formParams = new Dictionary<String, object>();
 
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -216,7 +216,7 @@
       /// </summary>
       /// <param name="serialNumber">date serial number</param>
       /// <returns></returns>
-      public string simpleFmt (long? serialNumber) {
+      public SingleStringValue simpleFmt (long? serialNumber) {
         // create path and map variables
         var path = "/date/{serialNumber}/mmddyyyy".Replace("{format}","json").Replace("{" + "serialNumber" + "}", apiInvoker.escapeString(serialNumber.ToString()));
 
@@ -230,13 +230,13 @@
            throw new ApiException(400, "missing required params");
         }
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -255,7 +255,7 @@
       /// month for the date provided 
       /// </summary>
       /// <returns></returns>
-      public string dtstrMonth () {
+      public SingleStringValue dtstrMonth () {
         // create path and map variables
         var path = "/date/{mm}/{dd}/{yyyy}/month".Replace("{format}","json");
 
@@ -265,13 +265,13 @@
         var formParams = new Dictionary<String, object>();
 
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -290,7 +290,7 @@
       /// day of the month for the date provided 
       /// </summary>
       /// <returns></returns>
-      public string dtstrDayOfMonth () {
+      public SingleStringValue dtstrDayOfMonth () {
         // create path and map variables
         var path = "/date/{mm}/{dd}/{yyyy}/dayOfMonth".Replace("{format}","json");
 
@@ -300,13 +300,13 @@
         var formParams = new Dictionary<String, object>();
 
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -326,7 +326,7 @@
       /// </summary>
       /// <param name="serialNumber">date serial number</param>
       /// <returns></returns>
-      public string dtIsLeapYear (long? serialNumber) {
+      public SingleStringValue dtIsLeapYear (long? serialNumber) {
         // create path and map variables
         var path = "/date/{serialNumber}/isLeapYear".Replace("{format}","json").Replace("{" + "serialNumber" + "}", apiInvoker.escapeString(serialNumber.ToString()));
 
@@ -340,13 +340,13 @@
            throw new ApiException(400, "missing required params");
         }
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -365,7 +365,7 @@
       /// day of the current year 
       /// </summary>
       /// <returns></returns>
-      public string dayOfYear () {
+      public SingleStringValue dayOfYear () {
         // create path and map variables
         var path = "/date/today/dayOfYear".Replace("{format}","json");
 
@@ -375,13 +375,13 @@
         var formParams = new Dictionary<String, object>();
 
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -400,7 +400,7 @@
       /// today's date in SimpleFormat returns the current date formatted in SimpleFormat
       /// </summary>
       /// <returns></returns>
-      public string todaySimpleFmt () {
+      public SingleStringValue todaySimpleFmt () {
         // create path and map variables
         var path = "/date/today/mmddyyyy".Replace("{format}","json");
 
@@ -410,13 +410,13 @@
         var formParams = new Dictionary<String, object>();
 
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -435,7 +435,7 @@
       /// day of year for the date provided 
       /// </summary>
       /// <returns></returns>
-      public string dtstrDayOfYear  () {
+      public SingleStringValue dtstrDayOfYear  () {
         // create path and map variables
         var path = "/date/{mm}/{dd}/{yyyy}/dayOfYear".Replace("{format}","json");
 
@@ -445,13 +445,13 @@
         var formParams = new Dictionary<String, object>();
 
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -470,7 +470,7 @@
       /// the current day of the week 
       /// </summary>
       /// <returns></returns>
-      public string weekday () {
+      public SingleStringValue weekday () {
         // create path and map variables
         var path = "/date/today/weekday".Replace("{format}","json");
 
@@ -480,13 +480,13 @@
         var formParams = new Dictionary<String, object>();
 
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -505,7 +505,7 @@
       /// the day of the week for the corresponding dd, mm, yyyy indicated 
       /// </summary>
       /// <returns></returns>
-      public string dtstrWeekday () {
+      public SingleStringValue dtstrWeekday () {
         // create path and map variables
         var path = "/date/{mm}/{dd}/{yyyy}/weekday".Replace("{format}","json");
 
@@ -515,13 +515,13 @@
         var formParams = new Dictionary<String, object>();
 
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -540,7 +540,7 @@
       /// date for the mm dd and yy indicated. 
       /// </summary>
       /// <returns></returns>
-      public string dtstrYear () {
+      public SingleStringValue dtstrYear () {
         // create path and map variables
         var path = "/date/{mm}/{dd}/{yyyy}/year".Replace("{format}","json");
 
@@ -550,13 +550,13 @@
         var formParams = new Dictionary<String, object>();
 
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -575,7 +575,7 @@
       /// day of the month for the current date. 
       /// </summary>
       /// <returns></returns>
-      public string dayOfMonth () {
+      public SingleStringValue dayOfMonth () {
         // create path and map variables
         var path = "/date/today/dayOfMonth".Replace("{format}","json");
 
@@ -585,13 +585,13 @@
         var formParams = new Dictionary<String, object>();
 
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -610,7 +610,7 @@
       /// year of the current date 
       /// </summary>
       /// <returns></returns>
-      public string year () {
+      public SingleStringValue year () {
         // create path and map variables
         var path = "/date/today/year".Replace("{format}","json");
 
@@ -620,13 +620,13 @@
         var formParams = new Dictionary<String, object>();
 
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -646,7 +646,7 @@
       /// </summary>
       /// <param name="serialNumber">date serial number</param>
       /// <returns></returns>
-      public string dtDayOfYear  (long? serialNumber) {
+      public SingleStringValue dtDayOfYear  (long? serialNumber) {
         // create path and map variables
         var path = "/date/{serialNumber}/dayOfYear".Replace("{format}","json").Replace("{" + "serialNumber" + "}", apiInvoker.escapeString(serialNumber.ToString()));
 
@@ -660,13 +660,13 @@
            throw new ApiException(400, "missing required params");
         }
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -686,7 +686,7 @@
       /// </summary>
       /// <param name="serialNumber">date serial number</param>
       /// <returns></returns>
-      public string dtDayOfMonth (long? serialNumber) {
+      public SingleStringValue dtDayOfMonth (long? serialNumber) {
         // create path and map variables
         var path = "/date/{serialNumber}/dayOfMonth".Replace("{format}","json").Replace("{" + "serialNumber" + "}", apiInvoker.escapeString(serialNumber.ToString()));
 
@@ -700,13 +700,13 @@
            throw new ApiException(400, "missing required params");
         }
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
@@ -725,7 +725,7 @@
       /// today's serial number returns serial number of current date
       /// </summary>
       /// <returns></returns>
-      public long? today () {
+      public SingleLongValue today () {
         // create path and map variables
         var path = "/date/today/serialNumber".Replace("{format}","json");
 
@@ -735,13 +735,13 @@
         var formParams = new Dictionary<String, object>();
 
         try {
-          if (typeof(long?) == typeof(byte[])) {
+          if (typeof(SingleLongValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as long?;
+            return ((object)response) as SingleLongValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (long?) ApiInvoker.deserialize(response, typeof(long?));
+               return (SingleLongValue) ApiInvoker.deserialize(response, typeof(SingleLongValue));
             }
             else {
               return null;
@@ -761,7 +761,7 @@
       /// </summary>
       /// <param name="serialNumber">date serial number</param>
       /// <returns></returns>
-      public string dtWeekday (long? serialNumber) {
+      public SingleStringValue dtWeekday (long? serialNumber) {
         // create path and map variables
         var path = "/date/{serialNumber}/weekday".Replace("{format}","json").Replace("{" + "serialNumber" + "}", apiInvoker.escapeString(serialNumber.ToString()));
 
@@ -775,13 +775,13 @@
            throw new ApiException(400, "missing required params");
         }
         try {
-          if (typeof(string) == typeof(byte[])) {
+          if (typeof(SingleStringValue) == typeof(byte[])) {
             var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-            return ((object)response) as string;
+            return ((object)response) as SingleStringValue;
           } else {
             var response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
             if(response != null){
-               return (string) ApiInvoker.deserialize(response, typeof(string));
+               return (SingleStringValue) ApiInvoker.deserialize(response, typeof(SingleStringValue));
             }
             else {
               return null;
