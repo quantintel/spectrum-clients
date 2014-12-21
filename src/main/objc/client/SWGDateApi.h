@@ -1,4 +1,6 @@
 #import <Foundation/Foundation.h>
+#import "SWGSingleStringValue.h"
+#import "SWGSingleLongValue.h"
 
 
 
@@ -16,7 +18,7 @@
  @param serialNumber date serial number
  */
 -(NSNumber*) dtMonthWithCompletionBlock :(NSNumber*) serialNumber 
-        completionHandler: (void (^)(NSString* output, NSError* error))completionBlock;
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
@@ -25,28 +27,28 @@
  @param serialNumber date serial number
  */
 -(NSNumber*) dtYearWithCompletionBlock :(NSNumber*) serialNumber 
-        completionHandler: (void (^)(NSString* output, NSError* error))completionBlock;
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
  returns whether the current year is a leap year.
  
  */
--(NSNumber*) isLeapYearWithCompletionBlock :(void (^)(NSString* output, NSError* error))completionBlock;
+-(NSNumber*) isLeapYearWithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
  returns whether the date provided is within a leap year.
  
  */
--(NSNumber*) dtstrIsLeapYear WithCompletionBlock :(void (^)(NSString* output, NSError* error))completionBlock;
+-(NSNumber*) dtstrIsLeapYear WithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
  month for the current date
  
  */
--(NSNumber*) monthWithCompletionBlock :(void (^)(NSString* output, NSError* error))completionBlock;
+-(NSNumber*) monthWithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
@@ -55,21 +57,21 @@
  @param serialNumber date serial number
  */
 -(NSNumber*) simpleFmtWithCompletionBlock :(NSNumber*) serialNumber 
-        completionHandler: (void (^)(NSString* output, NSError* error))completionBlock;
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
  month for the date provided
  
  */
--(NSNumber*) dtstrMonthWithCompletionBlock :(void (^)(NSString* output, NSError* error))completionBlock;
+-(NSNumber*) dtstrMonthWithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
  day of the month for the date provided
  
  */
--(NSNumber*) dtstrDayOfMonthWithCompletionBlock :(void (^)(NSString* output, NSError* error))completionBlock;
+-(NSNumber*) dtstrDayOfMonthWithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
@@ -78,63 +80,63 @@
  @param serialNumber date serial number
  */
 -(NSNumber*) dtIsLeapYearWithCompletionBlock :(NSNumber*) serialNumber 
-        completionHandler: (void (^)(NSString* output, NSError* error))completionBlock;
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
  day of the current year
  
  */
--(NSNumber*) dayOfYearWithCompletionBlock :(void (^)(NSString* output, NSError* error))completionBlock;
+-(NSNumber*) dayOfYearWithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
  today's date in SimpleFormat
  returns the current date formatted in SimpleFormat
  */
--(NSNumber*) todaySimpleFmtWithCompletionBlock :(void (^)(NSString* output, NSError* error))completionBlock;
+-(NSNumber*) todaySimpleFmtWithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
  day of year for the date provided
  
  */
--(NSNumber*) dtstrDayOfYear WithCompletionBlock :(void (^)(NSString* output, NSError* error))completionBlock;
+-(NSNumber*) dtstrDayOfYear WithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
  the current day of the week
  
  */
--(NSNumber*) weekdayWithCompletionBlock :(void (^)(NSString* output, NSError* error))completionBlock;
+-(NSNumber*) weekdayWithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
  the day of the week for the corresponding dd, mm, yyyy indicated
  
  */
--(NSNumber*) dtstrWeekdayWithCompletionBlock :(void (^)(NSString* output, NSError* error))completionBlock;
+-(NSNumber*) dtstrWeekdayWithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
  date for the mm dd and yy indicated.
  
  */
--(NSNumber*) dtstrYearWithCompletionBlock :(void (^)(NSString* output, NSError* error))completionBlock;
+-(NSNumber*) dtstrYearWithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
  day of the month for the current date.
  
  */
--(NSNumber*) dayOfMonthWithCompletionBlock :(void (^)(NSString* output, NSError* error))completionBlock;
+-(NSNumber*) dayOfMonthWithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
  year of the current date
  
  */
--(NSNumber*) yearWithCompletionBlock :(void (^)(NSString* output, NSError* error))completionBlock;
+-(NSNumber*) yearWithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
@@ -143,7 +145,7 @@
  @param serialNumber date serial number
  */
 -(NSNumber*) dtDayOfYear WithCompletionBlock :(NSNumber*) serialNumber 
-        completionHandler: (void (^)(NSString* output, NSError* error))completionBlock;
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
@@ -152,14 +154,14 @@
  @param serialNumber date serial number
  */
 -(NSNumber*) dtDayOfMonthWithCompletionBlock :(NSNumber*) serialNumber 
-        completionHandler: (void (^)(NSString* output, NSError* error))completionBlock;
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
  today's serial number
  returns serial number of current date
  */
--(NSNumber*) todayWithCompletionBlock :(void (^)(NSNumber* output, NSError* error))completionBlock;
+-(NSNumber*) todayWithCompletionBlock :(void (^)(SWGSingleLongValue* output, NSError* error))completionBlock;
 
 /**
 
@@ -168,6 +170,6 @@
  @param serialNumber date serial number
  */
 -(NSNumber*) dtWeekdayWithCompletionBlock :(NSNumber*) serialNumber 
-        completionHandler: (void (^)(NSString* output, NSError* error))completionBlock;
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 @end

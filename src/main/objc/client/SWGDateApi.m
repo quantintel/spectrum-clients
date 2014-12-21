@@ -1,6 +1,8 @@
 #import "SWGDateApi.h"
 #import "SWGFile.h"
 #import "SWGApiClient.h"
+#import "SWGSingleStringValue.h"
+#import "SWGSingleLongValue.h"
 
 
 
@@ -51,7 +53,7 @@ static NSString * basePath = @"http://localhost:9000";
 
 
 -(NSNumber*) dtMonthWithCompletionBlock:(NSNumber*) serialNumber
-        completionHandler: (void (^)(NSString* output, NSError* error))completionBlock{
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{serialNumber}/month", basePath];
 
@@ -71,27 +73,28 @@ static NSString * basePath = @"http://localhost:9000";
     }
     SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
 -(NSNumber*) dtYearWithCompletionBlock:(NSNumber*) serialNumber
-        completionHandler: (void (^)(NSString* output, NSError* error))completionBlock{
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{serialNumber}/year", basePath];
 
@@ -111,26 +114,27 @@ static NSString * basePath = @"http://localhost:9000";
     }
     SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
--(NSNumber*) isLeapYearWithCompletionBlock: (void (^)(NSString* output, NSError* error))completionBlock{
+-(NSNumber*) isLeapYearWithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/today/isLeapYear", basePath];
 
@@ -146,26 +150,27 @@ static NSString * basePath = @"http://localhost:9000";
     id bodyDictionary = nil;
         SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
--(NSNumber*) dtstrIsLeapYear WithCompletionBlock: (void (^)(NSString* output, NSError* error))completionBlock{
+-(NSNumber*) dtstrIsLeapYear WithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{mm}/{dd}/{yyyy}/isLeapYear", basePath];
 
@@ -181,26 +186,27 @@ static NSString * basePath = @"http://localhost:9000";
     id bodyDictionary = nil;
         SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
--(NSNumber*) monthWithCompletionBlock: (void (^)(NSString* output, NSError* error))completionBlock{
+-(NSNumber*) monthWithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/today/month", basePath];
 
@@ -216,27 +222,28 @@ static NSString * basePath = @"http://localhost:9000";
     id bodyDictionary = nil;
         SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
 -(NSNumber*) simpleFmtWithCompletionBlock:(NSNumber*) serialNumber
-        completionHandler: (void (^)(NSString* output, NSError* error))completionBlock{
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{serialNumber}/mmddyyyy", basePath];
 
@@ -256,26 +263,27 @@ static NSString * basePath = @"http://localhost:9000";
     }
     SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
--(NSNumber*) dtstrMonthWithCompletionBlock: (void (^)(NSString* output, NSError* error))completionBlock{
+-(NSNumber*) dtstrMonthWithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{mm}/{dd}/{yyyy}/month", basePath];
 
@@ -291,26 +299,27 @@ static NSString * basePath = @"http://localhost:9000";
     id bodyDictionary = nil;
         SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
--(NSNumber*) dtstrDayOfMonthWithCompletionBlock: (void (^)(NSString* output, NSError* error))completionBlock{
+-(NSNumber*) dtstrDayOfMonthWithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{mm}/{dd}/{yyyy}/dayOfMonth", basePath];
 
@@ -326,27 +335,28 @@ static NSString * basePath = @"http://localhost:9000";
     id bodyDictionary = nil;
         SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
 -(NSNumber*) dtIsLeapYearWithCompletionBlock:(NSNumber*) serialNumber
-        completionHandler: (void (^)(NSString* output, NSError* error))completionBlock{
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{serialNumber}/isLeapYear", basePath];
 
@@ -366,26 +376,27 @@ static NSString * basePath = @"http://localhost:9000";
     }
     SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
--(NSNumber*) dayOfYearWithCompletionBlock: (void (^)(NSString* output, NSError* error))completionBlock{
+-(NSNumber*) dayOfYearWithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/today/dayOfYear", basePath];
 
@@ -401,26 +412,27 @@ static NSString * basePath = @"http://localhost:9000";
     id bodyDictionary = nil;
         SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
--(NSNumber*) todaySimpleFmtWithCompletionBlock: (void (^)(NSString* output, NSError* error))completionBlock{
+-(NSNumber*) todaySimpleFmtWithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/today/mmddyyyy", basePath];
 
@@ -436,26 +448,27 @@ static NSString * basePath = @"http://localhost:9000";
     id bodyDictionary = nil;
         SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
--(NSNumber*) dtstrDayOfYear WithCompletionBlock: (void (^)(NSString* output, NSError* error))completionBlock{
+-(NSNumber*) dtstrDayOfYear WithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{mm}/{dd}/{yyyy}/dayOfYear", basePath];
 
@@ -471,26 +484,27 @@ static NSString * basePath = @"http://localhost:9000";
     id bodyDictionary = nil;
         SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
--(NSNumber*) weekdayWithCompletionBlock: (void (^)(NSString* output, NSError* error))completionBlock{
+-(NSNumber*) weekdayWithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/today/weekday", basePath];
 
@@ -506,26 +520,27 @@ static NSString * basePath = @"http://localhost:9000";
     id bodyDictionary = nil;
         SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
--(NSNumber*) dtstrWeekdayWithCompletionBlock: (void (^)(NSString* output, NSError* error))completionBlock{
+-(NSNumber*) dtstrWeekdayWithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{mm}/{dd}/{yyyy}/weekday", basePath];
 
@@ -541,26 +556,27 @@ static NSString * basePath = @"http://localhost:9000";
     id bodyDictionary = nil;
         SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
--(NSNumber*) dtstrYearWithCompletionBlock: (void (^)(NSString* output, NSError* error))completionBlock{
+-(NSNumber*) dtstrYearWithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{mm}/{dd}/{yyyy}/year", basePath];
 
@@ -576,26 +592,27 @@ static NSString * basePath = @"http://localhost:9000";
     id bodyDictionary = nil;
         SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
--(NSNumber*) dayOfMonthWithCompletionBlock: (void (^)(NSString* output, NSError* error))completionBlock{
+-(NSNumber*) dayOfMonthWithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/today/dayOfMonth", basePath];
 
@@ -611,26 +628,27 @@ static NSString * basePath = @"http://localhost:9000";
     id bodyDictionary = nil;
         SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
--(NSNumber*) yearWithCompletionBlock: (void (^)(NSString* output, NSError* error))completionBlock{
+-(NSNumber*) yearWithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/today/year", basePath];
 
@@ -646,27 +664,28 @@ static NSString * basePath = @"http://localhost:9000";
     id bodyDictionary = nil;
         SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
 -(NSNumber*) dtDayOfYear WithCompletionBlock:(NSNumber*) serialNumber
-        completionHandler: (void (^)(NSString* output, NSError* error))completionBlock{
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{serialNumber}/dayOfYear", basePath];
 
@@ -686,27 +705,28 @@ static NSString * basePath = @"http://localhost:9000";
     }
     SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
 -(NSNumber*) dtDayOfMonthWithCompletionBlock:(NSNumber*) serialNumber
-        completionHandler: (void (^)(NSString* output, NSError* error))completionBlock{
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{serialNumber}/dayOfMonth", basePath];
 
@@ -726,26 +746,27 @@ static NSString * basePath = @"http://localhost:9000";
     }
     SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
--(NSNumber*) todayWithCompletionBlock: (void (^)(NSNumber* output, NSError* error))completionBlock{
+-(NSNumber*) todayWithCompletionBlock: (void (^)(SWGSingleLongValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/today/serialNumber", basePath];
 
@@ -761,27 +782,28 @@ static NSString * basePath = @"http://localhost:9000";
     id bodyDictionary = nil;
         SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSNumber *result = data ? [[NSNumber alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleLongValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleLongValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
 
 -(NSNumber*) dtWeekdayWithCompletionBlock:(NSNumber*) serialNumber
-        completionHandler: (void (^)(NSString* output, NSError* error))completionBlock{
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{serialNumber}/weekday", basePath];
 
@@ -801,21 +823,22 @@ static NSString * basePath = @"http://localhost:9000";
     }
     SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    return [client stringWithCompletionBlock:requestUrl 
-                                              method:@"GET" 
-                                         queryParams:queryParams 
-                                                body:bodyDictionary 
-                                        headerParams:headerParams
-                                  requestContentType: requestContentType
-                                 responseContentType: responseContentType
-                                     completionBlock:^(NSString *data, NSError *error) {
-                         if (error) {
-                             completionBlock(nil, error);
-                             return;
-                         }
-                        NSString *result = data ? [[NSString alloc]initWithString: data] : nil;
-                        completionBlock(result, nil);
-                     }];
+    return [client dictionary:requestUrl 
+                              method:@"GET" 
+                         queryParams:queryParams 
+                                body:bodyDictionary 
+                        headerParams:headerParams
+                  requestContentType:requestContentType
+                 responseContentType:responseContentType
+                     completionBlock:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            completionBlock(nil, error);return;
+                        }
+                        SWGSingleStringValue *result = nil;
+                        if (data) {
+                            result = [[SWGSingleStringValue alloc]initWithValues: data];
+                        }
+                        completionBlock(result , nil);}];
     
 
 }
