@@ -40,8 +40,14 @@
 
  returns whether the date provided is within a leap year.
  
+ @param mm mm - month
+ @param dd dd - day of month
+ @param yy yy - yyyy year
  */
--(NSNumber*) dtstrIsLeapYear WithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
+-(NSNumber*) dtstrIsLeapYear WithCompletionBlock :(NSNumber*) mm 
+        dd:(NSNumber*) dd 
+        yy:(NSNumber*) yy 
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
@@ -63,15 +69,27 @@
 
  month for the date provided
  
+ @param mm mm - month
+ @param dd dd - day of month
+ @param yy yy - yyyy year
  */
--(NSNumber*) dtstrMonthWithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
+-(NSNumber*) dtstrMonthWithCompletionBlock :(NSNumber*) mm 
+        dd:(NSNumber*) dd 
+        yy:(NSNumber*) yy 
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
  day of the month for the date provided
  
+ @param mm mm - month
+ @param dd dd - day of month
+ @param yy yy - yyyy year
  */
--(NSNumber*) dtstrDayOfMonthWithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
+-(NSNumber*) dtstrDayOfMonthWithCompletionBlock :(NSNumber*) mm 
+        dd:(NSNumber*) dd 
+        yy:(NSNumber*) yy 
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
@@ -100,8 +118,14 @@
 
  day of year for the date provided
  
+ @param mm mm - month
+ @param dd dd - day of month
+ @param yy yy - yyyy year
  */
--(NSNumber*) dtstrDayOfYear WithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
+-(NSNumber*) dtstrDayOfYear WithCompletionBlock :(NSNumber*) mm 
+        dd:(NSNumber*) dd 
+        yy:(NSNumber*) yy 
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
@@ -114,15 +138,27 @@
 
  the day of the week for the corresponding dd, mm, yyyy indicated
  
+ @param mm mm - month
+ @param dd dd - day of month
+ @param yy yy - yyyy year
  */
--(NSNumber*) dtstrWeekdayWithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
+-(NSNumber*) dtstrWeekdayWithCompletionBlock :(NSNumber*) mm 
+        dd:(NSNumber*) dd 
+        yy:(NSNumber*) yy 
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 
  date for the mm dd and yy indicated.
  
+ @param mm mm - month
+ @param dd dd - day of month
+ @param yy yy - yyyy year
  */
--(NSNumber*) dtstrYearWithCompletionBlock :(void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
+-(NSNumber*) dtstrYearWithCompletionBlock :(NSNumber*) mm 
+        dd:(NSNumber*) dd 
+        yy:(NSNumber*) yy 
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
 

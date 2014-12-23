@@ -96,9 +96,15 @@ class DateApi {
       case ex: ApiException => throw ex
     }
   }
-  def dtstrIsLeapYear  () : Option[SingleStringValue]= {
+  def dtstrIsLeapYear  (mm: Int, dd: Int, yy: Int) : Option[SingleStringValue]= {
     // create path and map variables
-    val path = "/date/{mm}/{dd}/{yyyy}/isLeapYear".replaceAll("\\{format\\}","json")
+    val path = "/date/{mm}/{dd}/{yyyy}/isLeapYear".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}",apiInvoker.escape(mm))
+
+    .replaceAll("\\{" + "dd" + "\\}",apiInvoker.escape(dd))
+
+    .replaceAll("\\{" + "yy" + "\\}",apiInvoker.escape(yy))
+
+    
 
     val contentType = {
       "application/json"}
@@ -107,6 +113,11 @@ class DateApi {
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
 
+    // verify required params are set
+    (List(mm, dd, yy).filter(_ != null)).size match {
+       case 3 => // all required values set
+       case _ => throw new Exception("missing required params")
+    }
     try {
       apiInvoker.invokeApi(basePath, path, "GET", queryParams.toMap, None, headerParams.toMap, contentType) match {
         case s: String =>
@@ -169,9 +180,15 @@ class DateApi {
       case ex: ApiException => throw ex
     }
   }
-  def dtstrMonth () : Option[SingleStringValue]= {
+  def dtstrMonth (mm: Int, dd: Int, yy: Int) : Option[SingleStringValue]= {
     // create path and map variables
-    val path = "/date/{mm}/{dd}/{yyyy}/month".replaceAll("\\{format\\}","json")
+    val path = "/date/{mm}/{dd}/{yyyy}/month".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}",apiInvoker.escape(mm))
+
+    .replaceAll("\\{" + "dd" + "\\}",apiInvoker.escape(dd))
+
+    .replaceAll("\\{" + "yy" + "\\}",apiInvoker.escape(yy))
+
+    
 
     val contentType = {
       "application/json"}
@@ -180,6 +197,11 @@ class DateApi {
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
 
+    // verify required params are set
+    (List(mm, dd, yy).filter(_ != null)).size match {
+       case 3 => // all required values set
+       case _ => throw new Exception("missing required params")
+    }
     try {
       apiInvoker.invokeApi(basePath, path, "GET", queryParams.toMap, None, headerParams.toMap, contentType) match {
         case s: String =>
@@ -191,9 +213,15 @@ class DateApi {
       case ex: ApiException => throw ex
     }
   }
-  def dtstrDayOfMonth () : Option[SingleStringValue]= {
+  def dtstrDayOfMonth (mm: Int, dd: Int, yy: Int) : Option[SingleStringValue]= {
     // create path and map variables
-    val path = "/date/{mm}/{dd}/{yyyy}/dayOfMonth".replaceAll("\\{format\\}","json")
+    val path = "/date/{mm}/{dd}/{yyyy}/dayOfMonth".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}",apiInvoker.escape(mm))
+
+    .replaceAll("\\{" + "dd" + "\\}",apiInvoker.escape(dd))
+
+    .replaceAll("\\{" + "yy" + "\\}",apiInvoker.escape(yy))
+
+    
 
     val contentType = {
       "application/json"}
@@ -202,6 +230,11 @@ class DateApi {
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
 
+    // verify required params are set
+    (List(mm, dd, yy).filter(_ != null)).size match {
+       case 3 => // all required values set
+       case _ => throw new Exception("missing required params")
+    }
     try {
       apiInvoker.invokeApi(basePath, path, "GET", queryParams.toMap, None, headerParams.toMap, contentType) match {
         case s: String =>
@@ -286,9 +319,15 @@ class DateApi {
       case ex: ApiException => throw ex
     }
   }
-  def dtstrDayOfYear  () : Option[SingleStringValue]= {
+  def dtstrDayOfYear  (mm: Int, dd: Int, yy: Int) : Option[SingleStringValue]= {
     // create path and map variables
-    val path = "/date/{mm}/{dd}/{yyyy}/dayOfYear".replaceAll("\\{format\\}","json")
+    val path = "/date/{mm}/{dd}/{yyyy}/dayOfYear".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}",apiInvoker.escape(mm))
+
+    .replaceAll("\\{" + "dd" + "\\}",apiInvoker.escape(dd))
+
+    .replaceAll("\\{" + "yy" + "\\}",apiInvoker.escape(yy))
+
+    
 
     val contentType = {
       "application/json"}
@@ -297,6 +336,11 @@ class DateApi {
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
 
+    // verify required params are set
+    (List(mm, dd, yy).filter(_ != null)).size match {
+       case 3 => // all required values set
+       case _ => throw new Exception("missing required params")
+    }
     try {
       apiInvoker.invokeApi(basePath, path, "GET", queryParams.toMap, None, headerParams.toMap, contentType) match {
         case s: String =>
@@ -330,9 +374,15 @@ class DateApi {
       case ex: ApiException => throw ex
     }
   }
-  def dtstrWeekday () : Option[SingleStringValue]= {
+  def dtstrWeekday (mm: Int, dd: Int, yy: Int) : Option[SingleStringValue]= {
     // create path and map variables
-    val path = "/date/{mm}/{dd}/{yyyy}/weekday".replaceAll("\\{format\\}","json")
+    val path = "/date/{mm}/{dd}/{yyyy}/weekday".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}",apiInvoker.escape(mm))
+
+    .replaceAll("\\{" + "dd" + "\\}",apiInvoker.escape(dd))
+
+    .replaceAll("\\{" + "yy" + "\\}",apiInvoker.escape(yy))
+
+    
 
     val contentType = {
       "application/json"}
@@ -341,6 +391,11 @@ class DateApi {
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
 
+    // verify required params are set
+    (List(mm, dd, yy).filter(_ != null)).size match {
+       case 3 => // all required values set
+       case _ => throw new Exception("missing required params")
+    }
     try {
       apiInvoker.invokeApi(basePath, path, "GET", queryParams.toMap, None, headerParams.toMap, contentType) match {
         case s: String =>
@@ -352,9 +407,15 @@ class DateApi {
       case ex: ApiException => throw ex
     }
   }
-  def dtstrYear () : Option[SingleStringValue]= {
+  def dtstrYear (mm: Int, dd: Int, yy: Int) : Option[SingleStringValue]= {
     // create path and map variables
-    val path = "/date/{mm}/{dd}/{yyyy}/year".replaceAll("\\{format\\}","json")
+    val path = "/date/{mm}/{dd}/{yyyy}/year".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}",apiInvoker.escape(mm))
+
+    .replaceAll("\\{" + "dd" + "\\}",apiInvoker.escape(dd))
+
+    .replaceAll("\\{" + "yy" + "\\}",apiInvoker.escape(yy))
+
+    
 
     val contentType = {
       "application/json"}
@@ -363,6 +424,11 @@ class DateApi {
     val queryParams = new HashMap[String, String]
     val headerParams = new HashMap[String, String]
 
+    // verify required params are set
+    (List(mm, dd, yy).filter(_ != null)).size match {
+       case 3 => // all required values set
+       case _ => throw new Exception("missing required params")
+    }
     try {
       apiInvoker.invokeApi(basePath, path, "GET", queryParams.toMap, None, headerParams.toMap, contentType) match {
         case s: String =>

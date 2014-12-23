@@ -170,7 +170,10 @@ static NSString * basePath = @"http://localhost:9000";
 
 }
 
--(NSNumber*) dtstrIsLeapYear WithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
+-(NSNumber*) dtstrIsLeapYear WithCompletionBlock:(NSNumber*) mm
+        dd:(NSNumber*) dd
+        yy:(NSNumber*) yy
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{mm}/{dd}/{yyyy}/isLeapYear", basePath];
 
@@ -178,13 +181,25 @@ static NSString * basePath = @"http://localhost:9000";
     if ([requestUrl rangeOfString:@".{format}"].location != NSNotFound)
         [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:@".{format}"] withString:@".json"];
 
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"mm", @"}"]] withString: [SWGApiClient escape:mm]];
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"dd", @"}"]] withString: [SWGApiClient escape:dd]];
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"yy", @"}"]] withString: [SWGApiClient escape:yy]];
     NSString* requestContentType = @"application/json";
     NSString* responseContentType = @"application/json";
 
         NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [[NSMutableDictionary alloc] init];
     id bodyDictionary = nil;
-        SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
+        if(mm == nil) {
+        // error
+    }
+    if(dd == nil) {
+        // error
+    }
+    if(yy == nil) {
+        // error
+    }
+    SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
     return [client dictionary:requestUrl 
                               method:@"GET" 
@@ -283,7 +298,10 @@ static NSString * basePath = @"http://localhost:9000";
 
 }
 
--(NSNumber*) dtstrMonthWithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
+-(NSNumber*) dtstrMonthWithCompletionBlock:(NSNumber*) mm
+        dd:(NSNumber*) dd
+        yy:(NSNumber*) yy
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{mm}/{dd}/{yyyy}/month", basePath];
 
@@ -291,13 +309,25 @@ static NSString * basePath = @"http://localhost:9000";
     if ([requestUrl rangeOfString:@".{format}"].location != NSNotFound)
         [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:@".{format}"] withString:@".json"];
 
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"mm", @"}"]] withString: [SWGApiClient escape:mm]];
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"dd", @"}"]] withString: [SWGApiClient escape:dd]];
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"yy", @"}"]] withString: [SWGApiClient escape:yy]];
     NSString* requestContentType = @"application/json";
     NSString* responseContentType = @"application/json";
 
         NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [[NSMutableDictionary alloc] init];
     id bodyDictionary = nil;
-        SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
+        if(mm == nil) {
+        // error
+    }
+    if(dd == nil) {
+        // error
+    }
+    if(yy == nil) {
+        // error
+    }
+    SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
     return [client dictionary:requestUrl 
                               method:@"GET" 
@@ -319,7 +349,10 @@ static NSString * basePath = @"http://localhost:9000";
 
 }
 
--(NSNumber*) dtstrDayOfMonthWithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
+-(NSNumber*) dtstrDayOfMonthWithCompletionBlock:(NSNumber*) mm
+        dd:(NSNumber*) dd
+        yy:(NSNumber*) yy
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{mm}/{dd}/{yyyy}/dayOfMonth", basePath];
 
@@ -327,13 +360,25 @@ static NSString * basePath = @"http://localhost:9000";
     if ([requestUrl rangeOfString:@".{format}"].location != NSNotFound)
         [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:@".{format}"] withString:@".json"];
 
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"mm", @"}"]] withString: [SWGApiClient escape:mm]];
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"dd", @"}"]] withString: [SWGApiClient escape:dd]];
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"yy", @"}"]] withString: [SWGApiClient escape:yy]];
     NSString* requestContentType = @"application/json";
     NSString* responseContentType = @"application/json";
 
         NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [[NSMutableDictionary alloc] init];
     id bodyDictionary = nil;
-        SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
+        if(mm == nil) {
+        // error
+    }
+    if(dd == nil) {
+        // error
+    }
+    if(yy == nil) {
+        // error
+    }
+    SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
     return [client dictionary:requestUrl 
                               method:@"GET" 
@@ -468,7 +513,10 @@ static NSString * basePath = @"http://localhost:9000";
 
 }
 
--(NSNumber*) dtstrDayOfYear WithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
+-(NSNumber*) dtstrDayOfYear WithCompletionBlock:(NSNumber*) mm
+        dd:(NSNumber*) dd
+        yy:(NSNumber*) yy
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{mm}/{dd}/{yyyy}/dayOfYear", basePath];
 
@@ -476,13 +524,25 @@ static NSString * basePath = @"http://localhost:9000";
     if ([requestUrl rangeOfString:@".{format}"].location != NSNotFound)
         [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:@".{format}"] withString:@".json"];
 
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"mm", @"}"]] withString: [SWGApiClient escape:mm]];
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"dd", @"}"]] withString: [SWGApiClient escape:dd]];
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"yy", @"}"]] withString: [SWGApiClient escape:yy]];
     NSString* requestContentType = @"application/json";
     NSString* responseContentType = @"application/json";
 
         NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [[NSMutableDictionary alloc] init];
     id bodyDictionary = nil;
-        SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
+        if(mm == nil) {
+        // error
+    }
+    if(dd == nil) {
+        // error
+    }
+    if(yy == nil) {
+        // error
+    }
+    SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
     return [client dictionary:requestUrl 
                               method:@"GET" 
@@ -540,7 +600,10 @@ static NSString * basePath = @"http://localhost:9000";
 
 }
 
--(NSNumber*) dtstrWeekdayWithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
+-(NSNumber*) dtstrWeekdayWithCompletionBlock:(NSNumber*) mm
+        dd:(NSNumber*) dd
+        yy:(NSNumber*) yy
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{mm}/{dd}/{yyyy}/weekday", basePath];
 
@@ -548,13 +611,25 @@ static NSString * basePath = @"http://localhost:9000";
     if ([requestUrl rangeOfString:@".{format}"].location != NSNotFound)
         [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:@".{format}"] withString:@".json"];
 
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"mm", @"}"]] withString: [SWGApiClient escape:mm]];
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"dd", @"}"]] withString: [SWGApiClient escape:dd]];
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"yy", @"}"]] withString: [SWGApiClient escape:yy]];
     NSString* requestContentType = @"application/json";
     NSString* responseContentType = @"application/json";
 
         NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [[NSMutableDictionary alloc] init];
     id bodyDictionary = nil;
-        SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
+        if(mm == nil) {
+        // error
+    }
+    if(dd == nil) {
+        // error
+    }
+    if(yy == nil) {
+        // error
+    }
+    SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
     return [client dictionary:requestUrl 
                               method:@"GET" 
@@ -576,7 +651,10 @@ static NSString * basePath = @"http://localhost:9000";
 
 }
 
--(NSNumber*) dtstrYearWithCompletionBlock: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
+-(NSNumber*) dtstrYearWithCompletionBlock:(NSNumber*) mm
+        dd:(NSNumber*) dd
+        yy:(NSNumber*) yy
+        completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{mm}/{dd}/{yyyy}/year", basePath];
 
@@ -584,13 +662,25 @@ static NSString * basePath = @"http://localhost:9000";
     if ([requestUrl rangeOfString:@".{format}"].location != NSNotFound)
         [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:@".{format}"] withString:@".json"];
 
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"mm", @"}"]] withString: [SWGApiClient escape:mm]];
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"dd", @"}"]] withString: [SWGApiClient escape:dd]];
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"yy", @"}"]] withString: [SWGApiClient escape:yy]];
     NSString* requestContentType = @"application/json";
     NSString* responseContentType = @"application/json";
 
         NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary* headerParams = [[NSMutableDictionary alloc] init];
     id bodyDictionary = nil;
-        SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
+        if(mm == nil) {
+        // error
+    }
+    if(dd == nil) {
+        // error
+    }
+    if(yy == nil) {
+        // error
+    }
+    SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
     return [client dictionary:requestUrl 
                               method:@"GET" 
