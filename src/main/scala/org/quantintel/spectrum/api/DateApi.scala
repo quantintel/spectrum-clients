@@ -96,13 +96,13 @@ class DateApi {
       case ex: ApiException => throw ex
     }
   }
-  def dtstrIsLeapYear  (mm: Int, dd: Int, yy: Int) : Option[SingleStringValue]= {
+  def dtstrIsLeapYear  (mm: Int, dd: Int, yyyy: Int) : Option[SingleStringValue]= {
     // create path and map variables
     val path = "/date/{mm}/{dd}/{yyyy}/isLeapYear".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}",apiInvoker.escape(mm))
 
     .replaceAll("\\{" + "dd" + "\\}",apiInvoker.escape(dd))
 
-    .replaceAll("\\{" + "yy" + "\\}",apiInvoker.escape(yy))
+    .replaceAll("\\{" + "yyyy" + "\\}",apiInvoker.escape(yyyy))
 
     
 
@@ -114,7 +114,7 @@ class DateApi {
     val headerParams = new HashMap[String, String]
 
     // verify required params are set
-    (List(mm, dd, yy).filter(_ != null)).size match {
+    (List(mm, dd, yyyy).filter(_ != null)).size match {
        case 3 => // all required values set
        case _ => throw new Exception("missing required params")
     }
@@ -319,13 +319,13 @@ class DateApi {
       case ex: ApiException => throw ex
     }
   }
-  def dtstrDayOfYear  (mm: Int, dd: Int, yy: Int) : Option[SingleStringValue]= {
+  def dtstrDayOfYear  (mm: Int, dd: Int, yyyy: Int) : Option[SingleStringValue]= {
     // create path and map variables
     val path = "/date/{mm}/{dd}/{yyyy}/dayOfYear".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}",apiInvoker.escape(mm))
 
     .replaceAll("\\{" + "dd" + "\\}",apiInvoker.escape(dd))
 
-    .replaceAll("\\{" + "yy" + "\\}",apiInvoker.escape(yy))
+    .replaceAll("\\{" + "yyyy" + "\\}",apiInvoker.escape(yyyy))
 
     
 
@@ -337,7 +337,7 @@ class DateApi {
     val headerParams = new HashMap[String, String]
 
     // verify required params are set
-    (List(mm, dd, yy).filter(_ != null)).size match {
+    (List(mm, dd, yyyy).filter(_ != null)).size match {
        case 3 => // all required values set
        case _ => throw new Exception("missing required params")
     }
@@ -374,13 +374,13 @@ class DateApi {
       case ex: ApiException => throw ex
     }
   }
-  def dtstrWeekday (mm: Int, dd: Int, yy: Int) : Option[SingleStringValue]= {
+  def dtstrWeekday (mm: Int, dd: Int, yyyy: Int) : Option[SingleStringValue]= {
     // create path and map variables
     val path = "/date/{mm}/{dd}/{yyyy}/weekday".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}",apiInvoker.escape(mm))
 
     .replaceAll("\\{" + "dd" + "\\}",apiInvoker.escape(dd))
 
-    .replaceAll("\\{" + "yy" + "\\}",apiInvoker.escape(yy))
+    .replaceAll("\\{" + "yyyy" + "\\}",apiInvoker.escape(yyyy))
 
     
 
@@ -392,7 +392,7 @@ class DateApi {
     val headerParams = new HashMap[String, String]
 
     // verify required params are set
-    (List(mm, dd, yy).filter(_ != null)).size match {
+    (List(mm, dd, yyyy).filter(_ != null)).size match {
        case 3 => // all required values set
        case _ => throw new Exception("missing required params")
     }
@@ -407,13 +407,13 @@ class DateApi {
       case ex: ApiException => throw ex
     }
   }
-  def dtstrYear (mm: Int, dd: Int, yy: Int) : Option[SingleStringValue]= {
+  def dtstrYear (mm: Int, dd: Int, yyyy: Int) : Option[SingleStringValue]= {
     // create path and map variables
     val path = "/date/{mm}/{dd}/{yyyy}/year".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}",apiInvoker.escape(mm))
 
     .replaceAll("\\{" + "dd" + "\\}",apiInvoker.escape(dd))
 
-    .replaceAll("\\{" + "yy" + "\\}",apiInvoker.escape(yy))
+    .replaceAll("\\{" + "yyyy" + "\\}",apiInvoker.escape(yyyy))
 
     
 
@@ -425,7 +425,7 @@ class DateApi {
     val headerParams = new HashMap[String, String]
 
     // verify required params are set
-    (List(mm, dd, yy).filter(_ != null)).size match {
+    (List(mm, dd, yyyy).filter(_ != null)).size match {
        case 3 => // all required values set
        case _ => throw new Exception("missing required params")
     }

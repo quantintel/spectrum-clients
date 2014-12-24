@@ -163,14 +163,14 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public SingleStringValue dtstrIsLeapYear  (Integer mm, Integer dd, Integer yy) throws ApiException {
+  public SingleStringValue dtstrIsLeapYear  (Integer mm, Integer dd, Integer yyyy) throws ApiException {
     Object postBody = null;
     // verify required params are set
-    if(mm == null || dd == null || yy == null ) {
+    if(mm == null || dd == null || yyyy == null ) {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String path = "/date/{mm}/{dd}/{yyyy}/isLeapYear".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}", apiInvoker.escapeString(mm.toString())).replaceAll("\\{" + "dd" + "\\}", apiInvoker.escapeString(dd.toString())).replaceAll("\\{" + "yy" + "\\}", apiInvoker.escapeString(yy.toString()));
+    String path = "/date/{mm}/{dd}/{yyyy}/isLeapYear".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}", apiInvoker.escapeString(mm.toString())).replaceAll("\\{" + "dd" + "\\}", apiInvoker.escapeString(dd.toString())).replaceAll("\\{" + "yyyy" + "\\}", apiInvoker.escapeString(yyyy.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -519,14 +519,14 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public SingleStringValue dtstrDayOfYear  (Integer mm, Integer dd, Integer yy) throws ApiException {
+  public SingleStringValue dtstrDayOfYear  (Integer mm, Integer dd, Integer yyyy) throws ApiException {
     Object postBody = null;
     // verify required params are set
-    if(mm == null || dd == null || yy == null ) {
+    if(mm == null || dd == null || yyyy == null ) {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String path = "/date/{mm}/{dd}/{yyyy}/dayOfYear".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}", apiInvoker.escapeString(mm.toString())).replaceAll("\\{" + "dd" + "\\}", apiInvoker.escapeString(dd.toString())).replaceAll("\\{" + "yy" + "\\}", apiInvoker.escapeString(yy.toString()));
+    String path = "/date/{mm}/{dd}/{yyyy}/dayOfYear".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}", apiInvoker.escapeString(mm.toString())).replaceAll("\\{" + "dd" + "\\}", apiInvoker.escapeString(dd.toString())).replaceAll("\\{" + "yyyy" + "\\}", apiInvoker.escapeString(yyyy.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -607,14 +607,14 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public SingleStringValue dtstrWeekday (Integer mm, Integer dd, Integer yy) throws ApiException {
+  public SingleStringValue dtstrWeekday (Integer mm, Integer dd, Integer yyyy) throws ApiException {
     Object postBody = null;
     // verify required params are set
-    if(mm == null || dd == null || yy == null ) {
+    if(mm == null || dd == null || yyyy == null ) {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String path = "/date/{mm}/{dd}/{yyyy}/weekday".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}", apiInvoker.escapeString(mm.toString())).replaceAll("\\{" + "dd" + "\\}", apiInvoker.escapeString(dd.toString())).replaceAll("\\{" + "yy" + "\\}", apiInvoker.escapeString(yy.toString()));
+    String path = "/date/{mm}/{dd}/{yyyy}/weekday".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}", apiInvoker.escapeString(mm.toString())).replaceAll("\\{" + "dd" + "\\}", apiInvoker.escapeString(dd.toString())).replaceAll("\\{" + "yyyy" + "\\}", apiInvoker.escapeString(yyyy.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -653,14 +653,14 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public SingleStringValue dtstrYear (Integer mm, Integer dd, Integer yy) throws ApiException {
+  public SingleStringValue dtstrYear (Integer mm, Integer dd, Integer yyyy) throws ApiException {
     Object postBody = null;
     // verify required params are set
-    if(mm == null || dd == null || yy == null ) {
+    if(mm == null || dd == null || yyyy == null ) {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String path = "/date/{mm}/{dd}/{yyyy}/year".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}", apiInvoker.escapeString(mm.toString())).replaceAll("\\{" + "dd" + "\\}", apiInvoker.escapeString(dd.toString())).replaceAll("\\{" + "yy" + "\\}", apiInvoker.escapeString(yy.toString()));
+    String path = "/date/{mm}/{dd}/{yyyy}/year".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}", apiInvoker.escapeString(mm.toString())).replaceAll("\\{" + "dd" + "\\}", apiInvoker.escapeString(dd.toString())).replaceAll("\\{" + "yyyy" + "\\}", apiInvoker.escapeString(yyyy.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();

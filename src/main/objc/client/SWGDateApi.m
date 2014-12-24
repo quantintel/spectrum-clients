@@ -172,7 +172,7 @@ static NSString * basePath = @"http://localhost:9000";
 
 -(NSNumber*) dtstrIsLeapYear WithCompletionBlock:(NSNumber*) mm
         dd:(NSNumber*) dd
-        yy:(NSNumber*) yy
+        yyyy:(NSNumber*) yyyy
         completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{mm}/{dd}/{yyyy}/isLeapYear", basePath];
@@ -183,7 +183,7 @@ static NSString * basePath = @"http://localhost:9000";
 
     [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"mm", @"}"]] withString: [SWGApiClient escape:mm]];
     [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"dd", @"}"]] withString: [SWGApiClient escape:dd]];
-    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"yy", @"}"]] withString: [SWGApiClient escape:yy]];
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"yyyy", @"}"]] withString: [SWGApiClient escape:yyyy]];
     NSString* requestContentType = @"application/json";
     NSString* responseContentType = @"application/json";
 
@@ -196,7 +196,7 @@ static NSString * basePath = @"http://localhost:9000";
     if(dd == nil) {
         // error
     }
-    if(yy == nil) {
+    if(yyyy == nil) {
         // error
     }
     SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
@@ -515,7 +515,7 @@ static NSString * basePath = @"http://localhost:9000";
 
 -(NSNumber*) dtstrDayOfYear WithCompletionBlock:(NSNumber*) mm
         dd:(NSNumber*) dd
-        yy:(NSNumber*) yy
+        yyyy:(NSNumber*) yyyy
         completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{mm}/{dd}/{yyyy}/dayOfYear", basePath];
@@ -526,7 +526,7 @@ static NSString * basePath = @"http://localhost:9000";
 
     [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"mm", @"}"]] withString: [SWGApiClient escape:mm]];
     [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"dd", @"}"]] withString: [SWGApiClient escape:dd]];
-    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"yy", @"}"]] withString: [SWGApiClient escape:yy]];
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"yyyy", @"}"]] withString: [SWGApiClient escape:yyyy]];
     NSString* requestContentType = @"application/json";
     NSString* responseContentType = @"application/json";
 
@@ -539,7 +539,7 @@ static NSString * basePath = @"http://localhost:9000";
     if(dd == nil) {
         // error
     }
-    if(yy == nil) {
+    if(yyyy == nil) {
         // error
     }
     SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
@@ -602,7 +602,7 @@ static NSString * basePath = @"http://localhost:9000";
 
 -(NSNumber*) dtstrWeekdayWithCompletionBlock:(NSNumber*) mm
         dd:(NSNumber*) dd
-        yy:(NSNumber*) yy
+        yyyy:(NSNumber*) yyyy
         completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{mm}/{dd}/{yyyy}/weekday", basePath];
@@ -613,7 +613,7 @@ static NSString * basePath = @"http://localhost:9000";
 
     [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"mm", @"}"]] withString: [SWGApiClient escape:mm]];
     [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"dd", @"}"]] withString: [SWGApiClient escape:dd]];
-    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"yy", @"}"]] withString: [SWGApiClient escape:yy]];
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"yyyy", @"}"]] withString: [SWGApiClient escape:yyyy]];
     NSString* requestContentType = @"application/json";
     NSString* responseContentType = @"application/json";
 
@@ -626,7 +626,7 @@ static NSString * basePath = @"http://localhost:9000";
     if(dd == nil) {
         // error
     }
-    if(yy == nil) {
+    if(yyyy == nil) {
         // error
     }
     SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
@@ -653,7 +653,7 @@ static NSString * basePath = @"http://localhost:9000";
 
 -(NSNumber*) dtstrYearWithCompletionBlock:(NSNumber*) mm
         dd:(NSNumber*) dd
-        yy:(NSNumber*) yy
+        yyyy:(NSNumber*) yyyy
         completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock{
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/date/{mm}/{dd}/{yyyy}/year", basePath];
@@ -664,7 +664,7 @@ static NSString * basePath = @"http://localhost:9000";
 
     [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"mm", @"}"]] withString: [SWGApiClient escape:mm]];
     [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"dd", @"}"]] withString: [SWGApiClient escape:dd]];
-    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"yy", @"}"]] withString: [SWGApiClient escape:yy]];
+    [requestUrl replaceCharactersInRange: [requestUrl rangeOfString:[NSString stringWithFormat:@"%@%@%@", @"{", @"yyyy", @"}"]] withString: [SWGApiClient escape:yyyy]];
     NSString* requestContentType = @"application/json";
     NSString* responseContentType = @"application/json";
 
@@ -677,7 +677,7 @@ static NSString * basePath = @"http://localhost:9000";
     if(dd == nil) {
         // error
     }
-    if(yy == nil) {
+    if(yyyy == nil) {
         // error
     }
     SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];

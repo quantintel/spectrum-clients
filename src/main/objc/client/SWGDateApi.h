@@ -42,11 +42,11 @@
  
  @param mm mm - month
  @param dd dd - day of month
- @param yy yy - yyyy year
+ @param yyyy yy - yyyy year
  */
 -(NSNumber*) dtstrIsLeapYear WithCompletionBlock :(NSNumber*) mm 
         dd:(NSNumber*) dd 
-        yy:(NSNumber*) yy 
+        yyyy:(NSNumber*) yyyy 
         completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
@@ -120,11 +120,11 @@
  
  @param mm mm - month
  @param dd dd - day of month
- @param yy yy - yyyy year
+ @param yyyy yy - yyyy year
  */
 -(NSNumber*) dtstrDayOfYear WithCompletionBlock :(NSNumber*) mm 
         dd:(NSNumber*) dd 
-        yy:(NSNumber*) yy 
+        yyyy:(NSNumber*) yyyy 
         completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
@@ -140,11 +140,11 @@
  
  @param mm mm - month
  @param dd dd - day of month
- @param yy yy - yyyy year
+ @param yyyy yy - yyyy year
  */
 -(NSNumber*) dtstrWeekdayWithCompletionBlock :(NSNumber*) mm 
         dd:(NSNumber*) dd 
-        yy:(NSNumber*) yy 
+        yyyy:(NSNumber*) yyyy 
         completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
@@ -153,11 +153,11 @@
  
  @param mm mm - month
  @param dd dd - day of month
- @param yy yy - yyyy year
+ @param yyyy yy - yyyy year
  */
 -(NSNumber*) dtstrYearWithCompletionBlock :(NSNumber*) mm 
         dd:(NSNumber*) dd 
-        yy:(NSNumber*) yy 
+        yyyy:(NSNumber*) yyyy 
         completionHandler: (void (^)(SWGSingleStringValue* output, NSError* error))completionBlock;
 
 /**
