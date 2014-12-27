@@ -263,11 +263,11 @@
       /// </summary>
       /// <param name="mm">mm - month</param>
       /// <param name="dd">dd - day of month</param>
-      /// <param name="yy">yy - yyyy year</param>
+      /// <param name="yyyy">yy - yyyy year</param>
       /// <returns></returns>
-      public SingleStringValue dtstrMonth (int? mm, int? dd, int? yy) {
+      public SingleStringValue dtstrMonth (int? mm, int? dd, int? yyyy) {
         // create path and map variables
-        var path = "/date/{mm}/{dd}/{yyyy}/month".Replace("{format}","json").Replace("{" + "mm" + "}", apiInvoker.escapeString(mm.ToString())).Replace("{" + "dd" + "}", apiInvoker.escapeString(dd.ToString())).Replace("{" + "yy" + "}", apiInvoker.escapeString(yy.ToString()));
+        var path = "/date/{mm}/{dd}/{yyyy}/month".Replace("{format}","json").Replace("{" + "mm" + "}", apiInvoker.escapeString(mm.ToString())).Replace("{" + "dd" + "}", apiInvoker.escapeString(dd.ToString())).Replace("{" + "yyyy" + "}", apiInvoker.escapeString(yyyy.ToString()));
 
         // query params
         var queryParams = new Dictionary<String, String>();
@@ -275,7 +275,7 @@
         var formParams = new Dictionary<String, object>();
 
         // verify required params are set
-        if (mm == null || dd == null || yy == null ) {
+        if (mm == null || dd == null || yyyy == null ) {
            throw new ApiException(400, "missing required params");
         }
         try {
@@ -305,11 +305,11 @@
       /// </summary>
       /// <param name="mm">mm - month</param>
       /// <param name="dd">dd - day of month</param>
-      /// <param name="yy">yy - yyyy year</param>
+      /// <param name="yyyy">yy - yyyy year</param>
       /// <returns></returns>
-      public SingleStringValue dtstrDayOfMonth (int? mm, int? dd, int? yy) {
+      public SingleStringValue dtstrDayOfMonth (int? mm, int? dd, int? yyyy) {
         // create path and map variables
-        var path = "/date/{mm}/{dd}/{yyyy}/dayOfMonth".Replace("{format}","json").Replace("{" + "mm" + "}", apiInvoker.escapeString(mm.ToString())).Replace("{" + "dd" + "}", apiInvoker.escapeString(dd.ToString())).Replace("{" + "yy" + "}", apiInvoker.escapeString(yy.ToString()));
+        var path = "/date/{mm}/{dd}/{yyyy}/dayOfMonth".Replace("{format}","json").Replace("{" + "mm" + "}", apiInvoker.escapeString(mm.ToString())).Replace("{" + "dd" + "}", apiInvoker.escapeString(dd.ToString())).Replace("{" + "yyyy" + "}", apiInvoker.escapeString(yyyy.ToString()));
 
         // query params
         var queryParams = new Dictionary<String, String>();
@@ -317,7 +317,7 @@
         var formParams = new Dictionary<String, object>();
 
         // verify required params are set
-        if (mm == null || dd == null || yy == null ) {
+        if (mm == null || dd == null || yyyy == null ) {
            throw new ApiException(400, "missing required params");
         }
         try {
