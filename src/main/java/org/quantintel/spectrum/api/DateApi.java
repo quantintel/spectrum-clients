@@ -343,6 +343,52 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
+  public SingleLongValue decrBy (Integer d) throws ApiException {
+    Object postBody = null;
+    // verify required params are set
+    if(d == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    // create path and map variables
+    String path = "/date/today/decr/{n}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "d" + "\\}", apiInvoker.escapeString(d.toString()));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    String[] contentTypes = {
+      "application/json"};
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if(contentType.startsWith("multipart/form-data")) {
+      boolean hasFields = false;
+      FormDataMultiPart mp = new FormDataMultiPart();
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+      }
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
+      if(response != null){
+        return (SingleLongValue) ApiInvoker.deserialize(response, "", SingleLongValue.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
   public SingleStringValue dtstrDayOfMonth (Integer mm, Integer dd, Integer yyyy) throws ApiException {
     Object postBody = null;
     // verify required params are set
@@ -653,6 +699,48 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
+  public SingleLongValue incr () throws ApiException {
+    Object postBody = null;
+    // create path and map variables
+    String path = "/date/today/incr".replaceAll("\\{format\\}","json");
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    String[] contentTypes = {
+      "application/json"};
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if(contentType.startsWith("multipart/form-data")) {
+      boolean hasFields = false;
+      FormDataMultiPart mp = new FormDataMultiPart();
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+      }
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
+      if(response != null){
+        return (SingleLongValue) ApiInvoker.deserialize(response, "", SingleLongValue.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
   public SingleStringValue dtstrYear (Integer mm, Integer dd, Integer yyyy) throws ApiException {
     Object postBody = null;
     // verify required params are set
@@ -727,6 +815,51 @@ public class DateApi {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
         return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SingleLongValue serialNumber (Integer mm, Integer dd, Integer year) throws ApiException {
+    Object postBody = null;
+    // verify required params are set
+    if(mm == null || dd == null || year == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    // create path and map variables
+    String path = "/date/serialNumber/{mm}/{dd}/{yyyy}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}", apiInvoker.escapeString(mm.toString())).replaceAll("\\{" + "dd" + "\\}", apiInvoker.escapeString(dd.toString())).replaceAll("\\{" + "year" + "\\}", apiInvoker.escapeString(year.toString()));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    String[] contentTypes = {
+      "application/json"};
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if(contentType.startsWith("multipart/form-data")) {
+      boolean hasFields = false;
+      FormDataMultiPart mp = new FormDataMultiPart();
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+      }
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
+      if(response != null){
+        return (SingleLongValue) ApiInvoker.deserialize(response, "", SingleLongValue.class);
       }
       else {
         return null;
@@ -829,6 +962,48 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
+  public SingleLongValue decr () throws ApiException {
+    Object postBody = null;
+    // create path and map variables
+    String path = "/date/today/decr".replaceAll("\\{format\\}","json");
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    String[] contentTypes = {
+      "application/json"};
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if(contentType.startsWith("multipart/form-data")) {
+      boolean hasFields = false;
+      FormDataMultiPart mp = new FormDataMultiPart();
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+      }
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
+      if(response != null){
+        return (SingleLongValue) ApiInvoker.deserialize(response, "", SingleLongValue.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
   public SingleStringValue dtDayOfMonth (Long serialNumber) throws ApiException {
     Object postBody = null;
     // verify required params are set
@@ -861,6 +1036,52 @@ public class DateApi {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
         return (SingleStringValue) ApiInvoker.deserialize(response, "", SingleStringValue.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
+  public SingleLongValue incrBy (Integer d) throws ApiException {
+    Object postBody = null;
+    // verify required params are set
+    if(d == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    // create path and map variables
+    String path = "/date/today/incr/{n}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "d" + "\\}", apiInvoker.escapeString(d.toString()));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    String[] contentTypes = {
+      "application/json"};
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if(contentType.startsWith("multipart/form-data")) {
+      boolean hasFields = false;
+      FormDataMultiPart mp = new FormDataMultiPart();
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+      }
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
+      if(response != null){
+        return (SingleLongValue) ApiInvoker.deserialize(response, "", SingleLongValue.class);
       }
       else {
         return null;
