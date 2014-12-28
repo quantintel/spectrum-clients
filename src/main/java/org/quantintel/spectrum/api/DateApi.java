@@ -74,14 +74,14 @@ public class DateApi {
       }
     }
   }
-  public SingleLongValue serialNumber (Integer mm, Integer dd, Integer year) throws ApiException {
+  public SingleLongValue serialNumber (Integer mm, Integer dd, Integer yyyy) throws ApiException {
     Object postBody = null;
     // verify required params are set
-    if(mm == null || dd == null || year == null ) {
+    if(mm == null || dd == null || yyyy == null ) {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String path = "/date/{mm}/{dd}/{yyyy}/serialNumber".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}", apiInvoker.escapeString(mm.toString())).replaceAll("\\{" + "dd" + "\\}", apiInvoker.escapeString(dd.toString())).replaceAll("\\{" + "year" + "\\}", apiInvoker.escapeString(year.toString()));
+    String path = "/date/{mm}/{dd}/{yyyy}/serialNumber".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}", apiInvoker.escapeString(mm.toString())).replaceAll("\\{" + "dd" + "\\}", apiInvoker.escapeString(dd.toString())).replaceAll("\\{" + "yyyy" + "\\}", apiInvoker.escapeString(yyyy.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -916,14 +916,14 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public SingleLongValue decrBy (Integer d) throws ApiException {
+  public SingleLongValue decrBy (Integer n) throws ApiException {
     Object postBody = null;
     // verify required params are set
-    if(d == null ) {
+    if(n == null ) {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String path = "/date/today/{n}/decr".replaceAll("\\{format\\}","json").replaceAll("\\{" + "d" + "\\}", apiInvoker.escapeString(d.toString()));
+    String path = "/date/today/{n}/decr".replaceAll("\\{format\\}","json").replaceAll("\\{" + "n" + "\\}", apiInvoker.escapeString(n.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -1050,14 +1050,14 @@ public class DateApi {
     }
   }
   //error info- code: 404 reason: "Request cannot be satisfied with parameters provided." model: <none>
-  public SingleLongValue incrBy (Integer d) throws ApiException {
+  public SingleLongValue incrBy (Integer n) throws ApiException {
     Object postBody = null;
     // verify required params are set
-    if(d == null ) {
+    if(n == null ) {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String path = "/date/today/{n}/incr".replaceAll("\\{format\\}","json").replaceAll("\\{" + "d" + "\\}", apiInvoker.escapeString(d.toString()));
+    String path = "/date/today/{n}/incr".replaceAll("\\{format\\}","json").replaceAll("\\{" + "n" + "\\}", apiInvoker.escapeString(n.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();

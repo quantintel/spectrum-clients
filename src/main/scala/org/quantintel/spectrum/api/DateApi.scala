@@ -45,13 +45,13 @@ class DateApi {
       case ex: ApiException => throw ex
     }
   }
-  def serialNumber (mm: Int, dd: Int, year: Int) : Option[SingleLongValue]= {
+  def serialNumber (mm: Int, dd: Int, yyyy: Int) : Option[SingleLongValue]= {
     // create path and map variables
     val path = "/date/{mm}/{dd}/{yyyy}/serialNumber".replaceAll("\\{format\\}","json").replaceAll("\\{" + "mm" + "\\}",apiInvoker.escape(mm))
 
     .replaceAll("\\{" + "dd" + "\\}",apiInvoker.escape(dd))
 
-    .replaceAll("\\{" + "year" + "\\}",apiInvoker.escape(year))
+    .replaceAll("\\{" + "yyyy" + "\\}",apiInvoker.escape(yyyy))
 
     
 
@@ -63,7 +63,7 @@ class DateApi {
     val headerParams = new HashMap[String, String]
 
     // verify required params are set
-    (List(mm, dd, year).filter(_ != null)).size match {
+    (List(mm, dd, yyyy).filter(_ != null)).size match {
        case 3 => // all required values set
        case _ => throw new Exception("missing required params")
     }
@@ -568,9 +568,9 @@ class DateApi {
       case ex: ApiException => throw ex
     }
   }
-  def decrBy (d: Int) : Option[SingleLongValue]= {
+  def decrBy (n: Int) : Option[SingleLongValue]= {
     // create path and map variables
-    val path = "/date/today/{n}/decr".replaceAll("\\{format\\}","json").replaceAll("\\{" + "d" + "\\}",apiInvoker.escape(d))
+    val path = "/date/today/{n}/decr".replaceAll("\\{format\\}","json").replaceAll("\\{" + "n" + "\\}",apiInvoker.escape(n))
 
     
 
@@ -582,7 +582,7 @@ class DateApi {
     val headerParams = new HashMap[String, String]
 
     // verify required params are set
-    (List(d).filter(_ != null)).size match {
+    (List(n).filter(_ != null)).size match {
        case 1 => // all required values set
        case _ => throw new Exception("missing required params")
     }
@@ -648,9 +648,9 @@ class DateApi {
       case ex: ApiException => throw ex
     }
   }
-  def incrBy (d: Int) : Option[SingleLongValue]= {
+  def incrBy (n: Int) : Option[SingleLongValue]= {
     // create path and map variables
-    val path = "/date/today/{n}/incr".replaceAll("\\{format\\}","json").replaceAll("\\{" + "d" + "\\}",apiInvoker.escape(d))
+    val path = "/date/today/{n}/incr".replaceAll("\\{format\\}","json").replaceAll("\\{" + "n" + "\\}",apiInvoker.escape(n))
 
     
 
@@ -662,7 +662,7 @@ class DateApi {
     val headerParams = new HashMap[String, String]
 
     // verify required params are set
-    (List(d).filter(_ != null)).size match {
+    (List(n).filter(_ != null)).size match {
        case 1 => // all required values set
        case _ => throw new Exception("missing required params")
     }
