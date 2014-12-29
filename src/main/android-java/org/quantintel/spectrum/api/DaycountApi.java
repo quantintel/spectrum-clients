@@ -29,39 +29,6 @@ public class DaycountApi {
 
   //error info- code: 400 reason: "Required parameter missing" model: <none>
   //error info- code: 404 reason: "function error" model: <none>
-  public SingleDoubleValue actual365fyf (Long fromdate, Long todate) throws ApiException {
-    // verify required params are set
-    if(fromdate == null || todate == null ) {
-       throw new ApiException(400, "missing required params");
-    }
-    // create path and map variables
-    String path = "/daycount/{fromdate}/{todate}}/actual365fyf".replaceAll("\\{format\\}","json").replaceAll("\\{" + "fromdate" + "\\}", apiInvoker.escapeString(fromdate.toString())).replaceAll("\\{" + "todate" + "\\}", apiInvoker.escapeString(todate.toString()));
-
-    // query params
-    Map<String, String> queryParams = new HashMap<String, String>();
-    Map<String, String> headerParams = new HashMap<String, String>();
-
-    String contentType = "application/json";
-
-    try {
-      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, contentType);
-      if(response != null){
-        return (SingleDoubleValue) ApiInvoker.deserialize(response, "", SingleDoubleValue.class);
-      }
-      else {
-        return null;
-      }
-    } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-        return null;
-      }
-      else {
-        throw ex;
-      }
-    }
-  }
-  //error info- code: 400 reason: "Required parameter missing" model: <none>
-  //error info- code: 404 reason: "function error" model: <none>
   public SingleLongValue actual360 (Long fromdate, Long todate) throws ApiException {
     // verify required params are set
     if(fromdate == null || todate == null ) {
@@ -227,13 +194,13 @@ public class DaycountApi {
   }
   //error info- code: 400 reason: "Required parameter missing" model: <none>
   //error info- code: 404 reason: "function error" model: <none>
-  public SingleLongValue actual365f (Long fromdate, Long todate) throws ApiException {
+  public SingleDoubleValue actual365fyf (Long fromdate, Long todate) throws ApiException {
     // verify required params are set
     if(fromdate == null || todate == null ) {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String path = "/daycount/{fromdate}/{todate}}/actual365f".replaceAll("\\{format\\}","json").replaceAll("\\{" + "fromdate" + "\\}", apiInvoker.escapeString(fromdate.toString())).replaceAll("\\{" + "todate" + "\\}", apiInvoker.escapeString(todate.toString()));
+    String path = "/daycount/{fromdate}/{todate}/actual365fyf".replaceAll("\\{format\\}","json").replaceAll("\\{" + "fromdate" + "\\}", apiInvoker.escapeString(fromdate.toString())).replaceAll("\\{" + "todate" + "\\}", apiInvoker.escapeString(todate.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -244,7 +211,7 @@ public class DaycountApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, contentType);
       if(response != null){
-        return (SingleLongValue) ApiInvoker.deserialize(response, "", SingleLongValue.class);
+        return (SingleDoubleValue) ApiInvoker.deserialize(response, "", SingleDoubleValue.class);
       }
       else {
         return null;
@@ -278,6 +245,39 @@ public class DaycountApi {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, contentType);
       if(response != null){
         return (SingleDoubleValue) ApiInvoker.deserialize(response, "", SingleDoubleValue.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+        return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  //error info- code: 400 reason: "Required parameter missing" model: <none>
+  //error info- code: 404 reason: "function error" model: <none>
+  public SingleLongValue actual365f (Long fromdate, Long todate) throws ApiException {
+    // verify required params are set
+    if(fromdate == null || todate == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    // create path and map variables
+    String path = "/daycount/{fromdate}/{todate}/actual365f".replaceAll("\\{format\\}","json").replaceAll("\\{" + "fromdate" + "\\}", apiInvoker.escapeString(fromdate.toString())).replaceAll("\\{" + "todate" + "\\}", apiInvoker.escapeString(todate.toString()));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    String contentType = "application/json";
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, contentType);
+      if(response != null){
+        return (SingleLongValue) ApiInvoker.deserialize(response, "", SingleLongValue.class);
       }
       else {
         return null;
