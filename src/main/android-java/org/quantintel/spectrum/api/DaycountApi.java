@@ -29,7 +29,7 @@ public class DaycountApi {
 
   //error info- code: 400 reason: "Required parameter missing" model: <none>
   //error info- code: 404 reason: "function error" model: <none>
-  public SingleDoubleValue actual360fyf (Long fromdate, Long todate) throws ApiException {
+  public SingleDoubleValue actual365fyf (Long fromdate, Long todate) throws ApiException {
     // verify required params are set
     if(fromdate == null || todate == null ) {
        throw new ApiException(400, "missing required params");
@@ -95,7 +95,7 @@ public class DaycountApi {
   }
   //error info- code: 400 reason: "Required parameter missing" model: <none>
   //error info- code: 404 reason: "function error" model: <none>
-  public SingleLongValue actual360NL (Long fromdate, Long todate) throws ApiException {
+  public SingleLongValue actual365nl (Long fromdate, Long todate) throws ApiException {
     // verify required params are set
     if(fromdate == null || todate == null ) {
        throw new ApiException(400, "missing required params");
@@ -128,7 +128,7 @@ public class DaycountApi {
   }
   //error info- code: 400 reason: "Required parameter missing" model: <none>
   //error info- code: 404 reason: "function error" model: <none>
-  public SingleDoubleValue actual360nlyf (Long fromdate, Long todate) throws ApiException {
+  public SingleDoubleValue actual365nlyf (Long fromdate, Long todate) throws ApiException {
     // verify required params are set
     if(fromdate == null || todate == null ) {
        throw new ApiException(400, "missing required params");
@@ -161,7 +161,7 @@ public class DaycountApi {
   }
   //error info- code: 400 reason: "Required parameter missing" model: <none>
   //error info- code: 404 reason: "function error" model: <none>
-  public SingleLongValue actual360L (Long fromdate, Long todate) throws ApiException {
+  public SingleLongValue actual365l (Long fromdate, Long todate) throws ApiException {
     // verify required params are set
     if(fromdate == null || todate == null ) {
        throw new ApiException(400, "missing required params");
@@ -194,7 +194,7 @@ public class DaycountApi {
   }
   //error info- code: 400 reason: "Required parameter missing" model: <none>
   //error info- code: 404 reason: "function error" model: <none>
-  public SingleDoubleValue actual360lyf (Long fromdate, Long todate) throws ApiException {
+  public SingleDoubleValue actual365lyf (Long fromdate, Long todate) throws ApiException {
     // verify required params are set
     if(fromdate == null || todate == null ) {
        throw new ApiException(400, "missing required params");
@@ -227,7 +227,7 @@ public class DaycountApi {
   }
   //error info- code: 400 reason: "Required parameter missing" model: <none>
   //error info- code: 404 reason: "function error" model: <none>
-  public SingleLongValue actual360F (Long fromdate, Long todate) throws ApiException {
+  public SingleLongValue actual365f (Long fromdate, Long todate) throws ApiException {
     // verify required params are set
     if(fromdate == null || todate == null ) {
        throw new ApiException(400, "missing required params");

@@ -16,7 +16,7 @@ class DaycountApi {
   
   def addHeader(key: String, value: String) = apiInvoker.defaultHeaders += key -> value 
 
-  def actual360fyf (fromdate: Long, todate: Long) : Option[SingleDoubleValue]= {
+  def actual365fyf (fromdate: Long, todate: Long) : Option[SingleDoubleValue]= {
     // create path and map variables
     val path = "/daycount/{fromdate}/{todate}}/actual365fyf".replaceAll("\\{format\\}","json").replaceAll("\\{" + "fromdate" + "\\}",apiInvoker.escape(fromdate))
 
@@ -78,7 +78,7 @@ class DaycountApi {
       case ex: ApiException => throw ex
     }
   }
-  def actual360NL (fromdate: Long, todate: Long) : Option[SingleLongValue]= {
+  def actual365nl (fromdate: Long, todate: Long) : Option[SingleLongValue]= {
     // create path and map variables
     val path = "/daycount/{fromdate}/{todate}/actual365nl".replaceAll("\\{format\\}","json").replaceAll("\\{" + "fromdate" + "\\}",apiInvoker.escape(fromdate))
 
@@ -109,7 +109,7 @@ class DaycountApi {
       case ex: ApiException => throw ex
     }
   }
-  def actual360nlyf (fromdate: Long, todate: Long) : Option[SingleDoubleValue]= {
+  def actual365nlyf (fromdate: Long, todate: Long) : Option[SingleDoubleValue]= {
     // create path and map variables
     val path = "/daycount/{fromdate}/{todate}/actual365nlyf".replaceAll("\\{format\\}","json").replaceAll("\\{" + "fromdate" + "\\}",apiInvoker.escape(fromdate))
 
@@ -140,7 +140,7 @@ class DaycountApi {
       case ex: ApiException => throw ex
     }
   }
-  def actual360L (fromdate: Long, todate: Long) : Option[SingleLongValue]= {
+  def actual365l (fromdate: Long, todate: Long) : Option[SingleLongValue]= {
     // create path and map variables
     val path = "/daycount/{fromdate}/{todate}/actual365l".replaceAll("\\{format\\}","json").replaceAll("\\{" + "fromdate" + "\\}",apiInvoker.escape(fromdate))
 
@@ -171,7 +171,7 @@ class DaycountApi {
       case ex: ApiException => throw ex
     }
   }
-  def actual360lyf (fromdate: Long, todate: Long) : Option[SingleDoubleValue]= {
+  def actual365lyf (fromdate: Long, todate: Long) : Option[SingleDoubleValue]= {
     // create path and map variables
     val path = "/daycount/{fromdate}/{todate}/actual365lyf".replaceAll("\\{format\\}","json").replaceAll("\\{" + "fromdate" + "\\}",apiInvoker.escape(fromdate))
 
@@ -202,7 +202,7 @@ class DaycountApi {
       case ex: ApiException => throw ex
     }
   }
-  def actual360F (fromdate: Long, todate: Long) : Option[SingleLongValue]= {
+  def actual365f (fromdate: Long, todate: Long) : Option[SingleLongValue]= {
     // create path and map variables
     val path = "/daycount/{fromdate}/{todate}}/actual365f".replaceAll("\\{format\\}","json").replaceAll("\\{" + "fromdate" + "\\}",apiInvoker.escape(fromdate))
 
